@@ -1,0 +1,73 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:vm="clr-namespace:andrena.Usus.net.View.ViewModels"
+                    xmlns:dvc="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit"
+                    xmlns:chartingprimitives="clr-namespace:System.Windows.Controls.DataVisualization.Charting.Primitives;assembly=System.Windows.Controls.DataVisualization.Toolkit"
+                    >
+
+    <vm:TrueToVisibleConverter x:Key="TrueToVisibile"/>
+    <vm:HigherValueIsBad x:Key="HigherValueIsBad"/>
+    <vm:HigherValueIsGood x:Key="HigherValueIsGood"/>
+
+    <Style x:Key="AnalysisProgress" TargetType="ProgressBar">
+        <Setter Property="IsIndeterminate" Value="True"/>
+        <Setter Property="Height" Value="15"/>
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Visibility" Value="{Binding AnalysisRunning, Converter={StaticResource TrueToVisibile}}"/>
+    </Style>
+
+    <Style x:Key="DisplayGrid" TargetType="DataGrid">
+        <Setter Property="IsReadOnly" Value="True"/>
+        <Setter Property="CanUserSortColumns" Value="True"/>
+        <Setter Property="HorizontalGridLinesBrush" Value="LightGray"/>
+        <Setter Property="VerticalGridLinesBrush" Value="LightGray"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Margin" Value="0"/>
+    </Style>
+
+    <Style x:Key="BottomTabs" TargetType="TabControl">
+        <Setter Property="TabStripPlacement" Value="Bottom"/>
+        <Setter Property="BorderThickness" Value="1 0 1 1"/>
+    </Style>
+
+    <ControlTemplate x:Key="NoChartPadding" TargetType="dvc:Chart">
+        <Border Background="{TemplateBinding Background}" 
+                BorderBrush="{TemplateBinding BorderBrush}" 
+                BorderThickness="{TemplateBinding BorderThickness}" 
+                Padding="{TemplateBinding Padding}">
+            <Grid>
+                <chartingprimitives:EdgePanel x:Name="ChartArea" Style="{TemplateBinding ChartAreaStyle}">
+                    <Grid Canvas.ZIndex="-1" Style="{TemplateBinding PlotAreaStyle}" />
+                    <Border Canvas.ZIndex="10" BorderBrush="#FF919191" BorderThickness="1" />
+                </chartingprimitives:EdgePanel>
+            </Grid>
+        </Border>
+    </ControlTemplate>
+
+    <Style x:Key="ThickLine" TargetType="{x:Type Polyline}">
+        <Setter Property="StrokeThickness" Value="3" />
+    </Style>
+
+    <Style x:Key="NoWhitespaceChart" TargetType="dvc:Chart">
+        <Setter Property="Template" Value="{StaticResource NoChartPadding}"/>
+        <Setter Property="Margin" Value="0"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="PlotAreaStyle">
+            <Setter.Value>
+                <Style TargetType="Grid">
+                    <Setter Property="Background" Value="White" />
+                </Style>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ChartDescription" TargetType="TextBlock">
+        <Setter Property="HorizontalAlignment" Value="Right"/>
+    </Style>
+
+    
+
+
+</ResourceDictionary>
