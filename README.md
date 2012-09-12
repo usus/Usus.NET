@@ -2,6 +2,7 @@ Usus.NET
 ========
 
 This Visual Studio extension provides static code analysis for software developed with .NET.
+![Usus.NET VSIX](https://github.com/usus/Usus.NET/wiki/andrenarefacafter.png)
 
 The analysis can also be performed in code.
 ```csharp
@@ -9,8 +10,8 @@ The analysis can also be performed in code.
 var metrics = Analyze.Me();
 foreach (var method in metrics.Methods)
 {
-Console.WriteLine("Signature: " + method.Signature);
-Console.WriteLine("CC: " + method.CyclomaticComplexity);
+	Console.WriteLine("Signature: " + method.Signature);
+	Console.WriteLine("CC: " + method.CyclomaticComplexity);
 }
 ```
 
