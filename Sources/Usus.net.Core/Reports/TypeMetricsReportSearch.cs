@@ -20,5 +20,10 @@ namespace andrena.Usus.net.Core.Reports
         {
             return metrics.TypeForName(typeName);
         }
+
+		public static TypeMetricsReport ForTypeOf(this MetricsReport metrics, MethodMetricsReport methodMetrics)
+		{
+			return metrics.TypeOf(methodMetrics);
+		}
     }
 }

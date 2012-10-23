@@ -9,9 +9,9 @@ namespace andrena.Usus.net.Core.Reports
             return metrics.MethodsOf(typeMetrics);
         }
 
-        public static IEnumerable<TypeMetricsReport> TypesOfNamespace(this MetricsReport metrics, NamespaceMetricsReport namespaceMetrics)
-        {
-            return metrics.TypesOf(namespaceMetrics);
-        }
+		public static IEnumerable<TypeMetricsReport> TypesOfNamespace(this MetricsReport metrics, NamespaceMetricsReport namespaceMetrics)
+		{
+			return metrics.TypesOf(namespaceMetrics);
+		}
     }
 }

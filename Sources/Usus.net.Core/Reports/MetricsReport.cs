@@ -23,6 +23,7 @@ namespace andrena.Usus.net.Core.Reports
 
         Dictionary<string, TypeMetricsWithMethodMetrics> typeReports;
         Dictionary<string, NamespaceMetricsWithTypeMetrics> namespaceReports;
+    	Dictionary<MethodMetricsReport, TypeMetricsReport> methodToType;
 
         internal MutableGraph<TypeMetricsReport> GraphOfTypes { get; set; }
         internal MutableGraph<NamespaceMetricsWithTypeMetrics> GraphOfNamespaces { get; set; }
@@ -61,6 +62,7 @@ namespace andrena.Usus.net.Core.Reports
             CommonKnowledge = new CommonReportKnowledge();
             typeReports = new Dictionary<string, TypeMetricsWithMethodMetrics>();
             namespaceReports = new Dictionary<string, NamespaceMetricsWithTypeMetrics>();
+			methodToType = new Dictionary<MethodMetricsReport, TypeMetricsReport>();
         }
 
         internal void AddNamespaceReport(NamespaceMetricsWithTypeMetrics namespaceMertics)
@@ -95,10 +97,15 @@ namespace andrena.Usus.net.Core.Reports
             return typeReports[type.FullName].Methods;
         }
 
-        internal IEnumerable<TypeMetricsReport> TypesOf(NamespaceMetricsReport namespaceMetrics)
-        {
-            return namespaceReports[namespaceMetrics.Name].Types;
-        }
+		internal TypeMetricsReport TypeOf(MethodMetricsReport methodMetrics)
+		{
+			return methodToType[methodMetrics];
+		}
+
+		internal IEnumerable<TypeMetricsReport> TypesOf(NamespaceMetricsReport namespaceMetrics)
+		{
+			return namespaceReports[namespaceMetrics.Name].Types;
+		}
 
         private void ShareTheKnowledgeWithMethodsOf(TypeMetricsWithMethodMetrics typeMertics)
         {
@@ -107,6 +114,9 @@ namespace andrena.Usus.net.Core.Reports
             {
                 CommonKnowledge.UpdateFor(method);
                 method.CommonKnowledge = CommonKnowledge;
+
+				if (!methodToType.ContainsKey(method))
+					methodToType.Add(method, typeMertics.Itself);
             }
         }
     }
