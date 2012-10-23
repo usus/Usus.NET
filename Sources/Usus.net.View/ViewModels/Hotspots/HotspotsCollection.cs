@@ -46,8 +46,8 @@ namespace andrena.Usus.net.View.ViewModels.Hotspots
             Dispatch(ClearLists);
             Dispatch(() => SetClassSizes(metrics.ClassSizeHotspots, metrics.Report));
             Dispatch(() => SetCumulativeComponentDependencies(metrics.CumulativeComponentDependencyHotspots, metrics.Report));
-            Dispatch(() => SetCyclomaticComplexities(metrics.CyclomaticComplexityHotspots));
-            Dispatch(() => SetMethodLengths(metrics.MethodLengthHotspots));
+            Dispatch(() => SetCyclomaticComplexities(metrics.CyclomaticComplexityHotspots, metrics.Report));
+			Dispatch(() => SetMethodLengths(metrics.MethodLengthHotspots, metrics.Report));
             Dispatch(() => SetNamespacesInCycle(metrics.NumberOfNamespacesInCycleHotspots, metrics.Report));
             Dispatch(() => SetNonStaticPublicFields(metrics.NumberOfNonStaticPublicFieldsHotspots, metrics.Report));
         }
@@ -64,16 +64,16 @@ namespace andrena.Usus.net.View.ViewModels.Hotspots
                 m => new HotspotCumulativeComponentDependency(m, metrics));
         }
 
-        private void SetCyclomaticComplexities(IEnumerable<MethodMetricsReport> cyclomaticComplexities)
+		private void SetCyclomaticComplexities(IEnumerable<MethodMetricsReport> cyclomaticComplexities, MetricsReport metrics)
         {
             SetHotspots(CyclomaticComplexities, cyclomaticComplexities.OrderByDescending(m => m.CyclomaticComplexity),
-                m => new HotspotCyclomaticComplexity(m));
+                m => new HotspotCyclomaticComplexity(m, metrics));
         }
 
-        private void SetMethodLengths(IEnumerable<MethodMetricsReport> methodLengths)
+		private void SetMethodLengths(IEnumerable<MethodMetricsReport> methodLengths, MetricsReport metrics)
         {
             SetHotspots(MethodLengths, methodLengths.OrderByDescending(m => m.MethodLength),
-                m => new HotspotMethodLength(m));
+				m => new HotspotMethodLength(m, metrics));
         }
 
         private void SetNamespacesInCycle(IEnumerable<NamespaceMetricsReport> namespacesInCycle, MetricsReport metrics)
