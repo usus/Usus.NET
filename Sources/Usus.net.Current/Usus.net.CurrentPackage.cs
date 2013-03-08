@@ -43,11 +43,7 @@ namespace andrena.Usus_net_Current
         public Usus_net_CurrentPackage()
         {
             Trace.WriteLine(string.Format(CultureInfo.CurrentCulture, "Entering constructor for: {0}", this.ToString()));
-            GlobalEventManager.Instance.RegisterEvent(UsusNetWindow.Current, p =>
-            {
-                MyToolWindow.LocationEvent.Push(p as LineLocation);
-                ShowToolWindow(null, null);
-            });
+			GlobalEventManager.Instance.RegisterEvent(UsusNetWindow.Current, p => ShowToolWindow(null, null));
         }
 
         /// <summary>

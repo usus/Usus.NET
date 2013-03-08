@@ -11,10 +11,15 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <ProgressBar Style="{StaticResource AnalysisProgress}"/>
-        <DataGrid Grid.Row="1" Style="{StaticResource DisplayGrid}" 
+        <StackPanel Grid.Row="1">
+            <ComboBox ItemsSource="{Binding Types}" SelectedItem="{Binding SelectedType}"/>
+            <ComboBox ItemsSource="{Binding Methods}" SelectedItem="{Binding SelectedMethod}"/>
+        </StackPanel>
+        <DataGrid Grid.Row="2" Style="{StaticResource DisplayGrid}" 
                   CanUserSortColumns="False" ColumnHeaderHeight="0"
                   ItemsSource="{Binding Entries}"/>
     </Grid>

@@ -27,12 +27,11 @@ namespace andrena.Usus.net.View
             return distributionsView;
         }
 
-        public static FrameworkElement CreateCurrent(ViewHub hub, Action<Action<LineLocation>> lineRequestor)
+        public static FrameworkElement CreateCurrent(ViewHub hub)
         {
             var currentView = new View.Current();
             var currentViewModel = new ViewModels.Current.Current { Dispatchable = currentView };
             currentViewModel.RegisterHub(hub);
-            lineRequestor(currentViewModel.RequestLineHandler());
             currentView.DataContext = currentViewModel;
             return currentView;
         }

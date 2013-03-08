@@ -72,12 +72,6 @@
       <IncludeOutputGroupsInVSIX>BuiltProjectOutputGroup%3bBuiltProjectOutputGroupDependencies%3bGetCopyToOutputDirectoryItems%3bPkgdefProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
       <IncludeOutputGroupsInVSIXLocalOnly>DebugSymbolsProjectOutputGroup%3b</IncludeOutputGroupsInVSIXLocalOnly>
     </ProjectReference>
-    <ProjectReference Include="..\Usus.net.EditorAdornment\Usus.net.EditorAdornment.csproj">
-      <Project>{978923DF-C2AC-43E8-B88A-9C0A16986833}</Project>
-      <Name>Usus.net.EditorAdornment</Name>
-      <IncludeOutputGroupsInVSIX>BuiltProjectOutputGroup%3bBuiltProjectOutputGroupDependencies%3bGetCopyToOutputDirectoryItems%3b</IncludeOutputGroupsInVSIX>
-      <IncludeOutputGroupsInVSIXLocalOnly>DebugSymbolsProjectOutputGroup%3b</IncludeOutputGroupsInVSIXLocalOnly>
-    </ProjectReference>
     <ProjectReference Include="..\Usus.net.ExtensionHelper\Usus.net.ExtensionHelper.csproj">
       <Project>{A7B2DE89-865F-44CD-B6B3-4F60C8602225}</Project>
       <Name>Usus.net.ExtensionHelper</Name>

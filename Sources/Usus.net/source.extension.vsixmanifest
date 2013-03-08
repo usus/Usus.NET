@@ -22,7 +22,6 @@
     <VsPackage>|Usus.net.CleanCode;PkgdefProjectOutputGroup|</VsPackage>
     <VsPackage>|Usus.net.Current;PkgdefProjectOutputGroup|</VsPackage>
     <VsPackage>|Usus.net.Distributions;PkgdefProjectOutputGroup|</VsPackage>
-    <MefComponent>|Usus.net.EditorAdornment|</MefComponent>
     <VsPackage>|Usus.net.Menus;PkgdefProjectOutputGroup|</VsPackage>
     <VsPackage>|Usus.net.Sqi;PkgdefProjectOutputGroup|</VsPackage>
   </Content>
