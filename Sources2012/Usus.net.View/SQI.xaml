@@ -1,0 +1,55 @@
+﻿<UserControl x:Class="andrena.Usus.net.View.SQI"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:dvc="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <ResourceDictionary Source="ViewResources.xaml"/>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <ProgressBar Style="{StaticResource AnalysisProgress}"/>
+        <TabControl Grid.Row="1" Style="{StaticResource BottomTabs}">
+            <TabItem Header="Current">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid ItemsSource="{Binding Parameters}"
+                              Style="{StaticResource DisplayGrid}" IsReadOnly="False"/>
+                    <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" 
+                                VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <TextBlock Text="SQI = " FontSize="20" VerticalAlignment="Center"/>
+                        <TextBlock Text="{Binding Sqi}" FontSize="35"/>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Change Over Time">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <dvc:Chart Grid.Row="1" Style="{StaticResource NoWhitespaceChart}" >
+                        <dvc:Chart.Series>
+                            <dvc:LineSeries ItemsSource="{Binding SqiOverTime.PointsInTime}" 
+                                            IndependentValueBinding="{Binding Path=Key}" 
+                                            DependentValueBinding="{Binding Path=Value}"
+                                            PolylineStyle="{StaticResource ThickLine}"/>
+                        </dvc:Chart.Series>
+                        <dvc:Chart.Axes>
+                            <dvc:LinearAxis Orientation="Y" Minimum="0" Maximum="100" ShowGridLines="True"/>
+                        </dvc:Chart.Axes>
+                    </dvc:Chart>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</UserControl>
