@@ -1,31 +1,17 @@
 ﻿<Window x:Class="andrena.Usus.net.View.Dialogs.NamespaceCycleDisplay"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="{Binding Header}" Height="400" Width="600" WindowStyle="ToolWindow">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <TextBlock Grid.Row="0" Grid.Column="0" FontSize="15" Text="all namespaces in cycle"/>
-        <TextBlock Grid.Row="0" Grid.Column="1" FontSize="15" Text="classes that reference classes in other namespaces"/>
-        <ListBox Grid.Row="1" Grid.Column="0" ItemsSource="{Binding MainEntries}" BorderThickness="0" Margin="5" MouseDoubleClick="SelectNamespace">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <TextBlock Text="{Binding}" Margin="5"/>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
-        <ListBox Grid.Row="1" Grid.Column="1" ItemsSource="{Binding SubEntries}" BorderThickness="0" Margin="5" MouseDoubleClick="SelectType">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <TextBlock Text="{Binding}" Margin="5"/>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
-    </Grid>
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:local="clr-namespace:andrena.Usus.net.View.Dialogs"
+		Title="{Binding Header}" Height="400" Width="600" WindowStyle="ToolWindow">
+	<Window.Resources>
+		<ResourceDictionary Source="..\ViewResources.xaml"/>
+	</Window.Resources>
+	<TabControl Style="{StaticResource BottomTabs}">
+		<TabItem Header="List">
+			<local:NamespaceCycleListView />
+		</TabItem>
+		<TabItem Header="Graph">
+			<local:NamespaceCycleGraphView />
+		</TabItem>
+	</TabControl>
 </Window>
