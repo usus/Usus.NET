@@ -9,13 +9,62 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
+
+	<UserControl.Resources>
+		<Style TargetType="{x:Type gs:VertexControl}">
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="{x:Type gs:VertexControl}">
+						<Border BorderBrush="Gray"
+                                     Background="LightGray"
+                                     BorderThickness="1.0"
+                                     CornerRadius="8,8,8,8"
+                                     Padding="5">
+							<StackPanel Orientation="Vertical">
+								<!--    Vertex handlers -->
+								<ContentPresenter Content="{TemplateBinding Vertex}" 
+												  />
+								<!--ContentTemplate="{StaticResource demoTemplate}"
+                                             MouseUp="Vertex_MouseUp"
+                                             MouseEnter="Vertex_MouseEnter" 
+                                             MouseDown="Vertex_MouseDown" 
+                                             MouseLeftButtonDown="Vertex_MouseLeftButtonDown"-->
+							</StackPanel>
+
+							<!--<Border.Effect>
+								<DropShadowEffect BlurRadius="0.2" Color="LightCoral" 
+                                     Opacity="0.5"/>
+							</Border.Effect>-->
+						</Border>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+	</UserControl.Resources>
+
 	<Grid>
-		<zoom:ZoomControl Grid.Column="1" Margin="10">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="40"/>
+			<RowDefinition/>
+		</Grid.RowDefinitions>
+
+		<StackPanel Orientation="Horizontal" Background="Gray">
+			<Label VerticalAlignment="Center" VerticalContentAlignment="Center" Margin="10,0,0,0"
+				   Foreground="White" FontSize="10" FontFamily="Verdana" FontWeight="Bold"
+                   Content="Pick Layout Type"/>
+
+			<ComboBox ItemsSource="{Binding LayoutAlgorithmTypes}"
+					  SelectedItem="{Binding Path=LayoutAlgorithmType, Mode=TwoWay}"
+                      Width="150" Height="25" Margin="5" />
+		</StackPanel>
+
+		<zoom:ZoomControl Grid.Row="1" Margin="10">
 			<gs:GraphLayout Graph="{Binding Graph}" 
-				LayoutAlgorithmType="FR"
-				OverlapRemovalAlgorithmType="FSA"
-				HighlightAlgorithmType="Simple"
-				/>
+			LayoutAlgorithmType="{Binding Path=LayoutAlgorithmType, Mode=OneWay}"
+			OverlapRemovalAlgorithmType="FSA"
+			HighlightAlgorithmType="Simple"
+			/>
+
 		</zoom:ZoomControl>
 	</Grid>
 </UserControl>
