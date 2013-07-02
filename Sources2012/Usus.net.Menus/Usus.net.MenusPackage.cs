@@ -1,11 +1,11 @@
-﻿using System;
+﻿using andrena.Usus.net.ExtensionHelper;
+using Microsoft.VisualStudio.Shell;
+using Microsoft.VisualStudio.Shell.Interop;
+using System;
 using System.ComponentModel.Design;
 using System.Diagnostics;
 using System.Globalization;
 using System.Runtime.InteropServices;
-using andrena.Usus.net.ExtensionHelper;
-using Microsoft.VisualStudio.Shell;
-using Microsoft.VisualStudio.Shell.Interop;
 
 namespace andrena.Usus_net_Menus
 {
@@ -35,6 +35,7 @@ namespace andrena.Usus_net_Menus
                 SetupCommand(mcs, PkgCmdIDList.cmdidUsusNetCleanCode, MenuItemCallback_CleanCode);
                 SetupCommand(mcs, PkgCmdIDList.cmdidUsusNetCurrent, MenuItemCallback_Current);
                 SetupCommand(mcs, PkgCmdIDList.cmdidUsusNetSqi, MenuItemCallback_Sqi);
+				SetupCommand(mcs, PkgCmdIDList.cmdidUsusNetGraphs, MenuItemCallback_Graphs);
             }
         }
 
@@ -72,9 +73,14 @@ namespace andrena.Usus_net_Menus
             UsusNetWindow.Open(_Shell, UsusNetWindow.Current);
         }
 
-        private void MenuItemCallback_Sqi(object sender, EventArgs e)
-        {
-            UsusNetWindow.Open(_Shell, UsusNetWindow.Sqi);
-        }
+		private void MenuItemCallback_Sqi(object sender, EventArgs e)
+		{
+			UsusNetWindow.Open(_Shell, UsusNetWindow.Sqi);
+		}
+
+		private void MenuItemCallback_Graphs(object sender, EventArgs e)
+		{
+			UsusNetWindow.Open(_Shell, UsusNetWindow.Graphs);
+		}
     }
 }

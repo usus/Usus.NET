@@ -27,8 +27,7 @@ namespace andrena.Usus.net.View.Dialogs.ViewModels
 
 		public string DisplayString()
 		{
-			return string.Format("{0}\n -> {1} ({2})",
-				Source.FullName,
+			return string.Format("{0} ({1})",
 				Target.FullName,
 				ReferencingMethods());
 		}

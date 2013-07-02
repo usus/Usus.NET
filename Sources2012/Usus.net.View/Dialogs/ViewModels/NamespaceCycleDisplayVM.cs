@@ -40,7 +40,6 @@ namespace andrena.Usus.net.View.Dialogs.ViewModels
 				"LinLog", 
 				"Tree"
 			};
-
 			Header = header;
 			MainEntries = new ObservableCollection<string>();
 			SubEntries = new ObservableCollection<string>();
@@ -68,7 +67,6 @@ namespace andrena.Usus.net.View.Dialogs.ViewModels
 				from namespaceInCycle in cycle.Namespaces
 				from outOfNamespaceReference in cycle.TypesReferencingOutOf(namespaceInCycle)
 				select new Edge<object>(namespaceInCycle, outOfNamespaceReference.TargetNamespace.Name));
-
 			Graph = graph;
 		}
 	

@@ -1,8 +1,6 @@
-﻿using System;
-using System.Windows;
-using andrena.Usus.net.View.ExtensionPoints;
+﻿using andrena.Usus.net.View.ExtensionPoints;
 using andrena.Usus.net.View.Hub;
-using andrena.Usus.net.View.ViewModels.Current;
+using System.Windows;
 
 namespace andrena.Usus.net.View
 {
@@ -55,5 +53,14 @@ namespace andrena.Usus.net.View
             sqiView.DataContext = sqiViewModel;
             return sqiView;
         }
+
+		public static FrameworkElement CreateGraphs(ViewHub hub)
+		{
+			var graphsView = new View.Graphs();
+			var graphsViewModel = new ViewModels.Graphs.Graphs { Dispatchable = graphsView };
+			graphsViewModel.RegisterHub(hub);
+			graphsView.DataContext = graphsViewModel;
+			return graphsView;
+		}
     }
 }

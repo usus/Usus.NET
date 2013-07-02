@@ -1,5 +1,5 @@
-﻿using System;
-using Microsoft.VisualStudio.Shell.Interop;
+﻿using Microsoft.VisualStudio.Shell.Interop;
+using System;
 
 namespace andrena.Usus.net.ExtensionHelper
 {
@@ -11,6 +11,7 @@ namespace andrena.Usus.net.ExtensionHelper
         public readonly static string Hotspots = "2d71d321-dddd-4c87-aade-04a68f12212d";
         public readonly static string Distributions = "c93eb0d8-9e3a-4ba8-a92b-f2d472afda5f";
         public readonly static string CleanCode = "b46ffb70-45a2-43ea-894d-935951f0167e";
+		public readonly static string Graphs = "e8f66024-70e6-46f4-90f9-ea658525bb39";
 
         public static void Open(IVsShell shell, string guid)
         {

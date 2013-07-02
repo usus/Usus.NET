@@ -78,6 +78,9 @@
     <Compile Include="CleanCode.xaml.cs">
       <DependentUpon>CleanCode.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Graphs.xaml.cs">
+      <DependentUpon>Graphs.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Current.xaml.cs">
       <DependentUpon>Current.xaml</DependentUpon>
     </Compile>
@@ -112,6 +115,7 @@
     <Compile Include="ViewModels\Current\LineLocation.cs" />
     <Compile Include="ViewModels\Current\MethodAndTypeMetrics.cs" />
     <Compile Include="ViewModels\Distributions\Distributions.cs" />
+    <Compile Include="ViewModels\Graphs\Graphs.cs" />
     <Compile Include="ViewModels\HigherValueIsBad.cs" />
     <Compile Include="ViewModels\Hotspots\Hotspot.cs" />
     <Compile Include="ViewModels\Hotspots\IDoubleClickable.cs" />
@@ -161,6 +165,10 @@
       <DependentUpon>Cockpit.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Graphs.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Current.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
