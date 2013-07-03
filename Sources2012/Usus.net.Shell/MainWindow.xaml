@@ -20,6 +20,7 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
+                <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
             <Grid Grid.Row="0" Grid.Column="0">
@@ -40,23 +41,41 @@
                 <view:Hotspots x:Name="Hotspots" Grid.Row="1"/>
             </Grid>
 
-            <Grid Grid.Row="1" Grid.Column="0">
+            <Grid Grid.Row="0" Grid.Column="2">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="15"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <TextBlock Text="SQI"/>
                 <view:SQI x:Name="SQI" Grid.Row="1"/>
-            </Grid>
-            
-            <Grid Grid.Row="1" Grid.Column="1">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="15"/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <TextBlock Text="Histograms"/>
-                <view:Distributions x:Name="Distributions" Grid.Row="1"/>
-            </Grid>
-        </Grid>
+			</Grid>
+
+			<Grid Grid.Row="1" Grid.Column="0">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="15"/>
+					<RowDefinition/>
+				</Grid.RowDefinitions>
+				<TextBlock Text="Clean Code"/>
+				<view:CleanCode x:Name="CleanCode" Grid.Row="1"/>
+			</Grid>
+
+			<Grid Grid.Row="1" Grid.Column="1">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="15"/>
+					<RowDefinition/>
+				</Grid.RowDefinitions>
+				<TextBlock Text="Histograms"/>
+				<view:Distributions x:Name="Distributions" Grid.Row="1"/>
+			</Grid>
+
+			<Grid Grid.Row="1" Grid.Column="2">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="15"/>
+					<RowDefinition/>
+				</Grid.RowDefinitions>
+				<TextBlock Text="Graphs"/>
+				<view:Graphs x:Name="Graphs" Grid.Row="1"/>
+			</Grid>
+		</Grid>
     </Grid>
 </Window>
