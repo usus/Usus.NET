@@ -8,7 +8,7 @@ namespace andrena.Usus.net.View.Dialogs.ViewModels
 	{
 		public string Header { get; private set; }
 		public ObservableCollection<string> MainEntries { get; private set; }
-		public ObservableCollection<string> SubEntries { get; private set; }
+		public ObservableCollection<OutOfNamespaceReferenceVM> SubEntries { get; private set; }
 		public IBidirectionalGraph<object, IEdge<object>> Graph { get; private set; }
 
 		private NamespaceCycle cycle;
@@ -17,7 +17,7 @@ namespace andrena.Usus.net.View.Dialogs.ViewModels
 		{
 			Header = header;
 			MainEntries = new ObservableCollection<string>();
-			SubEntries = new ObservableCollection<string>();
+			SubEntries = new ObservableCollection<OutOfNamespaceReferenceVM>();
 		}
 
 		public void Display(NamespaceCycle namespaceCycle)
@@ -49,7 +49,7 @@ namespace andrena.Usus.net.View.Dialogs.ViewModels
 		{
 			SubEntries.Clear();
 			foreach (var type in cycle.TypesReferencingOutOf(namespaceName))
-				SubEntries.Add(type.DisplayString());
+				SubEntries.Add(new OutOfNamespaceReferenceVM(type));
 		}
 
 		public void SelectType(string type)

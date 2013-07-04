@@ -1,4 +1,5 @@
 using andrena.Usus.net.Core.Reports;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace andrena.Usus.net.View.Dialogs.ViewModels
@@ -25,18 +26,11 @@ namespace andrena.Usus.net.View.Dialogs.ViewModels
 			this.Target = target;
 		}
 
-		public string DisplayString()
+		public IEnumerable<MethodMetricsReport> ReferencingMethods()
 		{
-			return string.Format("{0} ({1})",
-				Target.FullName,
-				ReferencingMethods());
-		}
-
-		private string ReferencingMethods()
-		{
-			return string.Join(", ", from method in metrics.MethodsOfType(Source)
-									 where method.TypeDependencies.Contains(Target.FullName)
-									 select method.Name);
+			return from method in metrics.MethodsOfType(Source)
+				   where method.TypeDependencies.Contains(Target.FullName)
+				   select method;
 		}
 	}
 }

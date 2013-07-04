@@ -5,14 +5,15 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
+
 	<Grid>
 		<Grid.RowDefinitions>
 			<RowDefinition Height="Auto"/>
 			<RowDefinition/>
 		</Grid.RowDefinitions>
 		<Grid.ColumnDefinitions>
-			<ColumnDefinition/>
-			<ColumnDefinition/>
+			<ColumnDefinition Width="2*"/>
+			<ColumnDefinition Width="3*"/>
 		</Grid.ColumnDefinitions>
 		<TextBlock Grid.Row="0" Grid.Column="0" FontSize="15" Text="all namespaces in cycle"/>
 		<TextBlock Grid.Row="0" Grid.Column="1" FontSize="15" Text="classes that reference classes in other namespaces"/>
@@ -23,10 +24,17 @@
 				</DataTemplate>
 			</ListBox.ItemTemplate>
 		</ListBox>
-		<ListBox Grid.Row="1" Grid.Column="1" ItemsSource="{Binding SubEntries}" BorderThickness="0" Margin="5" MouseDoubleClick="SelectType">
+		<ListBox Grid.Row="1" Grid.Column="1" ItemsSource="{Binding SubEntries}" BorderThickness="0" Margin="5" MouseDoubleClick="SelectType"
+				 ScrollViewer.CanContentScroll="False">
 			<ListBox.ItemTemplate>
 				<DataTemplate>
-					<TextBlock Text="{Binding}" Margin="5"/>
+					<StackPanel>
+						<TextBlock Text="{Binding Source}" Margin="5,5,5,0" />
+						<ListBox ItemsSource="{Binding ResponsibleMethods}" Margin="15,0,5,0"
+								 Background="Transparent" BorderThickness="0" />
+						<Path Fill="Black" Data="M 0 0 L 6 6 L 12 0 Z" Margin="20,5,5,5" />
+						<TextBlock Text="{Binding Target}" Margin="20,0,5,10"/>
+					</StackPanel>
 				</DataTemplate>
 			</ListBox.ItemTemplate>
 		</ListBox>
