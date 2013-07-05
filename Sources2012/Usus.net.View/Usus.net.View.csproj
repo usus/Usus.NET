@@ -79,6 +79,7 @@
       <DependentUpon>CleanCode.xaml</DependentUpon>
     </Compile>
     <Compile Include="Dialogs\ViewModels\OutOfNamespaceReferenceVM.cs" />
+    <Compile Include="ViewModels\Command.cs" />
     <Compile Include="ViewModels\GraphViewModel.cs" />
     <Compile Include="Graphs.xaml.cs">
       <DependentUpon>Graphs.xaml</DependentUpon>

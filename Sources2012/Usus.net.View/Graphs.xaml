@@ -34,6 +34,8 @@
 						<ComboBox ItemsSource="{Binding LayoutAlgorithmTypes}"
 								  SelectedItem="{Binding Path=LayoutAlgorithmType, Mode=TwoWay}"
 								  Width="150" Height="25" Margin="5" />
+
+						<Button Content="show cycles" Margin="5" Padding="5" Command="{Binding ShowNamespaceCycles}"/>
 					</StackPanel>
 					<zoom:ZoomControl Grid.Row="1" Margin="10">
 						<gs:GraphLayout Graph="{Binding NamespacesGraph}" 
@@ -60,6 +62,8 @@
 						<ComboBox ItemsSource="{Binding LayoutAlgorithmTypes}"
 								  SelectedItem="{Binding Path=LayoutAlgorithmType, Mode=TwoWay}"
 								  Width="150" Height="25" Margin="5" />
+
+						<Button Content="show cycles" Margin="5" Padding="5" Command="{Binding ShowTypeCycles}"/>
 					</StackPanel>
 					<zoom:ZoomControl Grid.Row="1" Margin="10">
 						<gs:GraphLayout Graph="{Binding TypesGraph}" 
