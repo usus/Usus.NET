@@ -104,6 +104,8 @@
     <ProjectReference Include="..\Usus.net.Graphs\Usus.net.Graphs.csproj">
       <Project>{8a4524ce-85bd-477f-9d14-0602c4b64d7d}</Project>
       <Name>Usus.net.Graphs</Name>
+      <IncludeOutputGroupsInVSIX>BuiltProjectOutputGroup%3bBuiltProjectOutputGroupDependencies%3bGetCopyToOutputDirectoryItems%3bPkgdefProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
+      <IncludeOutputGroupsInVSIXLocalOnly>DebugSymbolsProjectOutputGroup%3b</IncludeOutputGroupsInVSIXLocalOnly>
     </ProjectReference>
     <ProjectReference Include="..\Usus.net.Hotspots\Usus.net.Hotspots.csproj">
       <Project>{6E8A1B85-1210-46FF-B8EC-F1242F739452}</Project>
