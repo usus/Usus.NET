@@ -25,5 +25,6 @@
     <VsPackage>|Usus.net.Menus;PkgdefProjectOutputGroup|</VsPackage>
     <VsPackage>|Usus.net.Sqi;PkgdefProjectOutputGroup|</VsPackage>
     <VsPackage>|Usus.net.Graphs;PkgdefProjectOutputGroup|</VsPackage>
+    <VsPackage>|Usus.net.TypeCylces;PkgdefProjectOutputGroup|</VsPackage>
   </Content>
 </Vsix>

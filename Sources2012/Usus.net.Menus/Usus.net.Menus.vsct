@@ -136,6 +136,15 @@
 					<ButtonText>Graphs</ButtonText>
 				</Strings>
 			</Button>
+
+			<Button guid="guidUsus_net_MenusCmdSet" id="cmdidUsusNetTypeCycles" priority="0x0100" type="Button">
+				<Parent guid="guidUsus_net_MenusCmdSet" id="MyMenuGroup" />
+				<Icon guid="guidImages" id="bmpPicSearch" />
+				<Strings>
+					<CommandName>cmdidUsusNetTypeCycles</CommandName>
+					<ButtonText>Type Cycles</ButtonText>
+				</Strings>
+			</Button>
       
 
     </Buttons>
@@ -172,6 +181,7 @@
       <IDSymbol name="cmdidUsusNetCurrent" value="0x0140" />
       <IDSymbol name="cmdidUsusNetSqi" value="0x0150" />
       <IDSymbol name="cmdidUsusNetGraphs" value="0x0160" />
+      <IDSymbol name="cmdidUsusNetTypeCycles" value="0x0170" />
     </GuidSymbol>
 
     

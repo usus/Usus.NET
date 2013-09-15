@@ -1,12 +1,12 @@
 ﻿// PkgCmdID.cs
 // MUST match PkgCmdID.h
 
-namespace andrena.Usus_net_Graphs
+namespace andrena.Usus_net_TypeCylces
 {
     static class PkgCmdIDList
     {
 
-        public const uint cmdidUsusNetGraphs =    0x101;
+        public const uint cmdidUsusNetTypeCycles =    0x101;
 
     };
 }

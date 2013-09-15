@@ -2,7 +2,6 @@
 using andrena.Usus.net.View.Dialogs.ViewModels;
 using QuickGraph;
 using System.Linq;
-using System.Windows;
 
 namespace andrena.Usus.net.View.ViewModels.Graphs
 {
@@ -10,24 +9,6 @@ namespace andrena.Usus.net.View.ViewModels.Graphs
 	{
 		public IBidirectionalGraph<object, IEdge<object>> NamespacesGraph { get; private set; }
 		public IBidirectionalGraph<object, IEdge<object>> TypesGraph { get; private set; }
-		public Command ShowNamespaceCycles { get; private set; }
-		public Command ShowTypeCycles { get; private set; }
-
-		public Graphs()
-		{
-			ShowNamespaceCycles = new Command(ShowNamespaceCycleDialog);
-			ShowTypeCycles = new Command(ShowTypeCycleDialog);
-		}
-
-		private void ShowNamespaceCycleDialog()
-		{
-			MessageBox.Show("show namespace cycles");
-		}
-
-		private void ShowTypeCycleDialog()
-		{
-			MessageBox.Show("show type cycles");
-		}
 
 		protected override void AnalysisFinished(PreparedMetricsReport metrics)
 		{

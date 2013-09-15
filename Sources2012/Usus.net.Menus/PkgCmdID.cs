@@ -12,5 +12,6 @@ namespace andrena.Usus_net_Menus
         public const uint cmdidUsusNetCurrent = 0x0140;
         public const uint cmdidUsusNetSqi = 0x0150;
 		public const uint cmdidUsusNetGraphs = 0x0160;
+		public const uint cmdidUsusNetTypeCycles = 0x0170;
     };
 }

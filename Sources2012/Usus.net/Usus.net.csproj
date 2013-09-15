@@ -125,6 +125,12 @@
       <IncludeOutputGroupsInVSIX>BuiltProjectOutputGroup%3bBuiltProjectOutputGroupDependencies%3bGetCopyToOutputDirectoryItems%3bPkgdefProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
       <IncludeOutputGroupsInVSIXLocalOnly>DebugSymbolsProjectOutputGroup%3b</IncludeOutputGroupsInVSIXLocalOnly>
     </ProjectReference>
+    <ProjectReference Include="..\Usus.net.TypeCylces\Usus.net.TypeCylces.csproj">
+      <Project>{03a01044-431e-4029-94ae-874b89012e8e}</Project>
+      <Name>Usus.net.TypeCylces</Name>
+      <IncludeOutputGroupsInVSIX>BuiltProjectOutputGroup%3bBuiltProjectOutputGroupDependencies%3bGetCopyToOutputDirectoryItems%3bPkgdefProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
+      <IncludeOutputGroupsInVSIXLocalOnly>DebugSymbolsProjectOutputGroup%3b</IncludeOutputGroupsInVSIXLocalOnly>
+    </ProjectReference>
     <ProjectReference Include="..\Usus.net.View\Usus.net.View.csproj">
       <Project>{08D9B61E-6197-4775-B90E-9F685C731BFB}</Project>
       <Name>Usus.net.View</Name>

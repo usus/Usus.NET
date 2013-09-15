@@ -78,6 +78,15 @@
     <Compile Include="CleanCode.xaml.cs">
       <DependentUpon>CleanCode.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TypeCycles.xaml.cs">
+      <DependentUpon>TypeCycles.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\TypeCycles\TypeCycleGraphView.xaml.cs">
+      <DependentUpon>TypeCycleGraphView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\TypeCycles\TypeCycleListView.xaml.cs">
+      <DependentUpon>TypeCycleListView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Dialogs\ViewModels\OutOfNamespaceReferenceVM.cs" />
     <Compile Include="ViewModels\Command.cs" />
     <Compile Include="ViewModels\GraphViewModel.cs" />
@@ -153,6 +162,7 @@
     <Compile Include="ViewModels\SQI\SqiParameterType.cs" />
     <Compile Include="ViewModels\SQI\SqiParameters.cs" />
     <Compile Include="ViewModels\TrueToVisibleConverter.cs" />
+    <Compile Include="ViewModels\TypeCycles\TypeCycles.cs" />
     <Compile Include="ViewModels\ValueInTime.cs" />
     <Compile Include="ViewModels\HigherValueIsGood.cs" />
     <Compile Include="ViewModels\ViewModel.cs" />
@@ -168,6 +178,18 @@
       <DependentUpon>Cockpit.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="TypeCycles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ViewModels\TypeCycles\TypeCycleGraphView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ViewModels\TypeCycles\TypeCycleListView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Graphs.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

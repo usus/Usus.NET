@@ -73,8 +73,8 @@
 					<RowDefinition Height="15"/>
 					<RowDefinition/>
 				</Grid.RowDefinitions>
-				<TextBlock Text="Graphs"/>
-				<view:Graphs x:Name="Graphs" Grid.Row="1"/>
+				<TextBlock Text="Type Cycles"/>
+				<view:TypeCycles x:Name="TypeCycles" Grid.Row="1"/>
 			</Grid>
 		</Grid>
     </Grid>
