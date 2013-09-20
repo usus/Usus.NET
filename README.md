@@ -1,4 +1,4 @@
-Usus.NET
+Usus.NET2
 ========
 
 This Visual Studio extension provides static code analysis for software developed with .NET.
