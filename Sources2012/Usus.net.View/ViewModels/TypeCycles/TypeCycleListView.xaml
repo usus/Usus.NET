@@ -15,17 +15,18 @@
 			<ColumnDefinition Width="2*"/>
 			<ColumnDefinition Width="3*"/>
 		</Grid.ColumnDefinitions>
-		<TextBlock Grid.Row="0" Grid.Column="0" FontSize="15" Text="all types in cycle"/>
-		<TextBlock Grid.Row="0" Grid.Column="1" FontSize="15" Text="types that reference other types"/>
-		<ListBox Grid.Row="1" Grid.Column="0" ItemsSource="{Binding MainEntries}" BorderThickness="0" Margin="5" MouseDoubleClick="SelectNamespace">
+		<TextBlock Grid.Row="0" Grid.Column="0" FontSize="15" Text="types in cycle"/>
+		<TextBlock Grid.Row="0" Grid.Column="1" FontSize="15" Text="cyclic references of selected type "/>
+		<ListBox Grid.Row="1" Grid.Column="0" ItemsSource="{Binding SelectedCycle.TypesInCycle}" BorderThickness="0" Margin="5" 
+				 SelectedItem="{Binding SelectedType}">
 			<ListBox.ItemTemplate>
 				<DataTemplate>
-					<TextBlock Text="{Binding}" Margin="5"/>
+					<TextBlock Text="{Binding DisplayName}" Margin="5"/>
 				</DataTemplate>
 			</ListBox.ItemTemplate>
 		</ListBox>
-		<ListBox Grid.Row="1" Grid.Column="1" ItemsSource="{Binding SubEntries}" BorderThickness="0" Margin="5" MouseDoubleClick="SelectType"
-				 ScrollViewer.CanContentScroll="False">
+		<ListBox Grid.Row="1" Grid.Column="1" ItemsSource="{Binding SelectedType.ReferencedTypes}" BorderThickness="0" Margin="5"
+				 ScrollViewer.CanContentScroll="False" MouseDoubleClick="SelectType">
 			<ListBox.ItemTemplate>
 				<DataTemplate>
 					<StackPanel>

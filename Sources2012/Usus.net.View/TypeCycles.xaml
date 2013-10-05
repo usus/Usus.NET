@@ -24,11 +24,12 @@
 		</Grid.ColumnDefinitions>
 		
 		<ProgressBar Grid.ColumnSpan="2" Style="{StaticResource AnalysisProgress}"/>
-		
-		<ListBox Grid.Row="1" Grid.Column="0" ItemsSource="{Binding TypeCycles}" BorderThickness="0" Margin="5">
+
+		<ListBox Grid.Row="1" Grid.Column="0" ItemsSource="{Binding AllCycles}" BorderThickness="0" Margin="5" 
+				 SelectedItem="{Binding SelectedCycle, Mode=TwoWay}">
 			<ListBox.ItemTemplate>
 				<DataTemplate>
-					<TextBlock Text="{Binding}" Margin="5"/>
+					<TextBlock Text="{Binding DisplayName}" Margin="5"/>
 				</DataTemplate>
 			</ListBox.ItemTemplate>
 		</ListBox>

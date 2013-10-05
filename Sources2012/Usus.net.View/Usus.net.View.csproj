@@ -87,7 +87,7 @@
     <Compile Include="ViewModels\TypeCycles\TypeCycleListView.xaml.cs">
       <DependentUpon>TypeCycleListView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Dialogs\ViewModels\OutOfNamespaceReferenceVM.cs" />
+    <Compile Include="Dialogs\NamespaceCycles\TypeReferenceVM.cs" />
     <Compile Include="ViewModels\Command.cs" />
     <Compile Include="ViewModels\GraphViewModel.cs" />
     <Compile Include="Graphs.xaml.cs">
@@ -96,24 +96,23 @@
     <Compile Include="Current.xaml.cs">
       <DependentUpon>Current.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Dialogs\NamespaceCycleGraphView.xaml.cs">
+    <Compile Include="Dialogs\NamespaceCycles\NamespaceCycleGraphView.xaml.cs">
       <DependentUpon>NamespaceCycleGraphView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Dialogs\NamespaceCycleListView.xaml.cs">
+    <Compile Include="Dialogs\NamespaceCycles\NamespaceCycleListView.xaml.cs">
       <DependentUpon>NamespaceCycleListView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Dialogs\ViewModels\OutOfNamespaceReference.cs" />
-    <Compile Include="Dialogs\ViewModels\NamespaceCycle.cs" />
-    <Compile Include="Dialogs\ViewModels\NamespaceCycleDisplayVM.cs" />
-    <Compile Include="Dialogs\NamespaceCycleDisplay.xaml.cs">
+    <Compile Include="Dialogs\NamespaceCycles\NamespaceCycle.cs" />
+    <Compile Include="Dialogs\NamespaceCycles\NamespaceCycleDisplayVM.cs" />
+    <Compile Include="Dialogs\NamespaceCycles\NamespaceCycleDisplay.xaml.cs">
       <DependentUpon>NamespaceCycleDisplay.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Dialogs\ViewModels\OutgoingTypeReferences.cs" />
+    <Compile Include="Dialogs\NamespaceCycles\OutgoingTypeReferences.cs" />
     <Compile Include="Distributions.xaml.cs">
       <DependentUpon>Distributions.xaml</DependentUpon>
     </Compile>
     <Compile Include="ExtensionPoints\IKnowSqiDetails.cs" />
-    <Compile Include="Dialogs\ListDisplay.xaml.cs">
+    <Compile Include="Dialogs\List\ListDisplay.xaml.cs">
       <DependentUpon>ListDisplay.xaml</DependentUpon>
     </Compile>
     <Compile Include="SQI.xaml.cs">
@@ -154,7 +153,7 @@
     <Compile Include="ViewModels\Hotspots\MethodHotspot.cs" />
     <Compile Include="ViewModels\Hotspots\NamespaceHotspot.cs" />
     <Compile Include="ViewModels\Hotspots\TypeHotspot.cs" />
-    <Compile Include="Dialogs\ViewModels\ListDisplay.cs" />
+    <Compile Include="Dialogs\List\ListDisplay.cs" />
     <Compile Include="ViewModels\Hotspots\TypeJump.cs" />
     <Compile Include="ViewModels\SQI\SQI.cs" />
     <Compile Include="ViewModels\SQI\SqiHistory.cs" />
@@ -163,6 +162,9 @@
     <Compile Include="ViewModels\SQI\SqiParameters.cs" />
     <Compile Include="ViewModels\TrueToVisibleConverter.cs" />
     <Compile Include="ViewModels\TypeCycles\TypeCycles.cs" />
+    <Compile Include="ViewModels\TypeCycles\TypeCycle.cs" />
+    <Compile Include="ViewModels\TypeCycles\TypeReferenceVM.cs" />
+    <Compile Include="ViewModels\TypeCycles\Type.cs" />
     <Compile Include="ViewModels\ValueInTime.cs" />
     <Compile Include="ViewModels\HigherValueIsGood.cs" />
     <Compile Include="ViewModels\ViewModel.cs" />
@@ -198,15 +200,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Dialogs\NamespaceCycleDisplay.xaml">
+    <Page Include="Dialogs\NamespaceCycles\NamespaceCycleDisplay.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Dialogs\NamespaceCycleGraphView.xaml">
+    <Page Include="Dialogs\NamespaceCycles\NamespaceCycleGraphView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Dialogs\NamespaceCycleListView.xaml">
+    <Page Include="Dialogs\NamespaceCycles\NamespaceCycleListView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -218,7 +220,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Dialogs\ListDisplay.xaml">
+    <Page Include="Dialogs\List\ListDisplay.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
