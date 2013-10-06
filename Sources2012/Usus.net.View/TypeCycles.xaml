@@ -19,8 +19,8 @@
 			<RowDefinition/>
 		</Grid.RowDefinitions>
 		<Grid.ColumnDefinitions>
-			<ColumnDefinition Width="2*"/>
-			<ColumnDefinition Width="7*"/>
+			<ColumnDefinition Width="90"/>
+			<ColumnDefinition Width="*"/>
 		</Grid.ColumnDefinitions>
 		
 		<ProgressBar Grid.ColumnSpan="2" Style="{StaticResource AnalysisProgress}"/>

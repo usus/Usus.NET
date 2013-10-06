@@ -8,5 +8,7 @@ namespace andrena.Usus.net.Core.Graphs
 		IEnumerable<V> Vertices { get; }
 		IEnumerable<Tuple<V, V>> Edges { get; }
 		StronglyConntectedComponents<V> Cycles();
+		void Ignore(V vertex);
+		IGraph<V> Clone();
 	}
 }

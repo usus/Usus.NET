@@ -59,15 +59,28 @@ namespace andrena.Usus.net.View.ViewModels.TypeCycles
 
 		protected override void AnalysisFinished(PreparedMetricsReport metrics)
 		{
-			var cycles = metrics.Report.TypeGraph.Cycles();
+			var graph = GetTypeGraph(metrics);
+			var cycles = graph.Cycles();
 			var cycleVMs = GetViewModels(metrics, cycles);
 			Display(cycleVMs);
+		}
+
+		private static IGraph<TypeMetricsReport> GetTypeGraph(PreparedMetricsReport metrics)
+		{
+			var graph = metrics.Report.TypeGraph.Clone();
+			var typesToIgnore = graph.Vertices.Where(t => t.CompilerGenerated).ToList();
+			foreach (var type in typesToIgnore)
+			{
+				graph.Ignore(type);
+			}
+			return graph;
 		}
 
 		private static IEnumerable<TypeCycle> GetViewModels(PreparedMetricsReport metrics, StronglyConntectedComponents<TypeMetricsReport> cycles)
 		{
 			return from cycle in cycles.All
 				   where cycle.VertexCount > 1
+				   orderby cycle.VertexCount descending
 				   select new TypeCycle
 				   {
 					   DisplayName = string.Format("{0} classes", cycle.VertexCount),

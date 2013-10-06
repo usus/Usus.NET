@@ -28,6 +28,11 @@ namespace andrena.Usus.net.Core.Graphs
 			graph.MergeVertices(vertex, vertices);
 		}
 
+		public void Ignore(V vertex)
+		{
+			graph.MergeVertex(vertex, (s, t) => new Edge<V>(s, t));
+		}
+
 		public MutableGraph<V> Reach(V start)
 		{
 			var reachGraph = start.ToNewGraph(PARALLEL_EDGES);
@@ -38,6 +43,11 @@ namespace andrena.Usus.net.Core.Graphs
 		public MutableGraph<R> Cast<R>(Func<V, R> selector, Func<R, bool> condition) where R : class
 		{
 			return graph.Clone(selector, condition);
+		}
+
+		public IGraph<V> Clone()
+		{
+			return new MutableGraph<V>(graph.Clone());
 		}
 
 		public StronglyConntectedComponents<V> Cycles()
