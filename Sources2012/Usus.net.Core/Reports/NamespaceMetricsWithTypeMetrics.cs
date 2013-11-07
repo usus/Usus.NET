@@ -3,30 +3,32 @@ using System.Linq;
 
 namespace andrena.Usus.net.Core.Reports
 {
-    internal class NamespaceMetricsWithTypeMetrics
-    {
-        public NamespaceMetricsReport Itself { get; internal set; }
-        public bool HasName { get { return !string.IsNullOrEmpty(Itself.Name); } }
+	public class NamespaceMetricsWithTypeMetrics
+	{
+		public NamespaceMetricsReport Namespace { get; internal set; }
+		public string Name { get { return Namespace.Name; } }
 
-        List<TypeMetricsReport> TypeReports;
-        public IEnumerable<TypeMetricsReport> Types
-        {
-            get { return TypeReports; }
-        }
+		internal bool HasName { get { return !string.IsNullOrEmpty(Namespace.Name); } }
 
-        internal NamespaceMetricsWithTypeMetrics()
-        {
-            TypeReports = new List<TypeMetricsReport>();
-        }
+		List<TypeMetricsReport> TypeReports;
+		public IEnumerable<TypeMetricsReport> Types
+		{
+			get { return TypeReports; }
+		}
 
-        internal void AddTypeReport(TypeMetricsReport typeReport)
-        {
-            TypeReports.Add(typeReport);
-        }
+		internal NamespaceMetricsWithTypeMetrics()
+		{
+			TypeReports = new List<TypeMetricsReport>();
+		}
 
-        internal void AddTypeReports(IEnumerable<NamespaceMetricsWithTypeMetrics> typeReports)
-        {
-            TypeReports.AddRange(typeReports.SelectMany(n => n.TypeReports));
-        }
-    }
+		internal void AddTypeReport(TypeMetricsReport typeReport)
+		{
+			TypeReports.Add(typeReport);
+		}
+
+		internal void AddTypeReports(IEnumerable<NamespaceMetricsWithTypeMetrics> typeReports)
+		{
+			TypeReports.AddRange(typeReports.SelectMany(n => n.TypeReports));
+		}
+	}
 }

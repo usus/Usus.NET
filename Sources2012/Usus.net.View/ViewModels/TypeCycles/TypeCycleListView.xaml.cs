@@ -1,7 +1,4 @@
-﻿using andrena.Usus.net.View.Dialogs.ViewModels;
-using System;
-using System.Windows.Controls;
-using System.Windows.Input;
+﻿using System.Windows.Controls;
 
 namespace andrena.Usus.net.View.ViewModels.TypeCycles
 {
@@ -15,24 +12,11 @@ namespace andrena.Usus.net.View.ViewModels.TypeCycles
 			InitializeComponent();
 		}
 
-		private void SelectNamespace(object sender, MouseButtonEventArgs e)
+		private void SelectType(object sender, System.Windows.Input.MouseButtonEventArgs e)
 		{
-			SelectionOf(sender, (vm, selected) => vm.SelectNamespace(selected));
-		}
+			var vm = DataContext as TypeCycles;
+			vm.Jump();
 
-		private void SelectType(object sender, MouseButtonEventArgs e)
-		{
-			SelectionOf(sender, (vm, selected) => vm.SelectType(selected));
-		}
-
-		private void SelectionOf(object sender, Action<NamespaceCycleDisplayVM, string> select)
-		{
-			var selectedItem = (sender as ListBox).SelectedItem;
-			if (selectedItem != null)
-			{
-				var vm = DataContext as NamespaceCycleDisplayVM;
-				select(vm, selectedItem as string);
-			}
 		}
 	}
 }

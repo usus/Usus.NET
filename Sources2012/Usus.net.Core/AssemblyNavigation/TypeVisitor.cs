@@ -24,7 +24,7 @@ namespace andrena.Usus.net.Core.AssemblyNavigation
         {
             var typeAndMethods = new TypeMetricsWithMethodMetrics();
             typeAndMethods.AddMethodReports(AnalyzeMethods(type, pdb, host));
-            typeAndMethods.Itself = AnalyzeType(type, pdb, typeAndMethods.Methods);
+            typeAndMethods.Type = AnalyzeType(type, pdb, typeAndMethods.Methods);
             return typeAndMethods;
         }
 

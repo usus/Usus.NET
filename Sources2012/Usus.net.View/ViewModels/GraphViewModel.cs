@@ -1,8 +1,7 @@
-using andrena.Usus.net.View.ViewModels;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
-namespace andrena.Usus.net.View.Dialogs.ViewModels
+namespace andrena.Usus.net.View.ViewModels
 {
 	public abstract class GraphViewModel : AnalysisAwareViewModel
 	{

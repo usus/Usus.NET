@@ -17,7 +17,7 @@ namespace andrena.Usus.net.Core.Metrics
             foreach (var namespaceWithTypes in metrics.GraphOfNamespaces.Vertices)
             {
                 metrics.AddNamespaceReport(namespaceWithTypes);
-                namespaceWithTypes.Itself.CyclicDependencies = CyclicDependencies.Of(namespaceWithTypes, cycles);
+                namespaceWithTypes.Namespace.CyclicDependencies = CyclicDependencies.Of(namespaceWithTypes, cycles);
             }
         }
     }

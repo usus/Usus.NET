@@ -1,14 +1,15 @@
+using andrena.Usus.net.View.ViewModels;
 using QuickGraph;
 using System.Collections.ObjectModel;
 using System.Linq;
 
-namespace andrena.Usus.net.View.Dialogs.ViewModels
+namespace andrena.Usus.net.View.Dialogs.NamespaceCycles
 {
 	public class NamespaceCycleDisplayVM : GraphViewModel
 	{
 		public string Header { get; private set; }
 		public ObservableCollection<string> MainEntries { get; private set; }
-		public ObservableCollection<OutOfNamespaceReferenceVM> SubEntries { get; private set; }
+		public ObservableCollection<TypeReferenceVM> SubEntries { get; private set; }
 		public IBidirectionalGraph<object, IEdge<object>> Graph { get; private set; }
 
 		private NamespaceCycle cycle;
@@ -17,7 +18,7 @@ namespace andrena.Usus.net.View.Dialogs.ViewModels
 		{
 			Header = header;
 			MainEntries = new ObservableCollection<string>();
-			SubEntries = new ObservableCollection<OutOfNamespaceReferenceVM>();
+			SubEntries = new ObservableCollection<TypeReferenceVM>();
 		}
 
 		public void Display(NamespaceCycle namespaceCycle)
@@ -49,7 +50,7 @@ namespace andrena.Usus.net.View.Dialogs.ViewModels
 		{
 			SubEntries.Clear();
 			foreach (var type in cycle.TypesReferencingOutOf(namespaceName))
-				SubEntries.Add(new OutOfNamespaceReferenceVM(type));
+				SubEntries.Add(new TypeReferenceVM(type));
 		}
 
 		public void SelectType(string type)

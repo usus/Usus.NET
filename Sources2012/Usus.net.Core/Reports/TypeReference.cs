@@ -1,10 +1,9 @@
-using andrena.Usus.net.Core.Reports;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace andrena.Usus.net.View.Dialogs.ViewModels
+namespace andrena.Usus.net.Core.Reports
 {
-	public class OutOfNamespaceReference
+	public class TypeReference
 	{
 		private readonly MetricsReport metrics;
 
@@ -19,7 +18,7 @@ namespace andrena.Usus.net.View.Dialogs.ViewModels
 			get { return metrics.ForNamespace(Target.Namespaces.First()); }
 		}
 
-		public OutOfNamespaceReference(MetricsReport metrics, TypeMetricsReport source, TypeMetricsReport target)
+		public TypeReference(MetricsReport metrics, TypeMetricsReport source, TypeMetricsReport target)
 		{
 			this.metrics = metrics;
 			this.Source = source;
