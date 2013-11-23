@@ -101,6 +101,12 @@
       <Project>{A7B2DE89-865F-44CD-B6B3-4F60C8602225}</Project>
       <Name>Usus.net.ExtensionHelper</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Usus.net.Graphs\Usus.net.Graphs.csproj">
+      <Project>{8a4524ce-85bd-477f-9d14-0602c4b64d7d}</Project>
+      <Name>Usus.net.Graphs</Name>
+      <IncludeOutputGroupsInVSIX>BuiltProjectOutputGroup%3bBuiltProjectOutputGroupDependencies%3bGetCopyToOutputDirectoryItems%3bPkgdefProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
+      <IncludeOutputGroupsInVSIXLocalOnly>DebugSymbolsProjectOutputGroup%3b</IncludeOutputGroupsInVSIXLocalOnly>
+    </ProjectReference>
     <ProjectReference Include="..\Usus.net.Hotspots\Usus.net.Hotspots.csproj">
       <Project>{6E8A1B85-1210-46FF-B8EC-F1242F739452}</Project>
       <Name>Usus.net.Hotspots</Name>
@@ -116,6 +122,12 @@
     <ProjectReference Include="..\Usus.net.Sqi\Usus.net.Sqi.csproj">
       <Project>{14D86696-B774-4058-A0D1-451C8AC177AD}</Project>
       <Name>Usus.net.Sqi</Name>
+      <IncludeOutputGroupsInVSIX>BuiltProjectOutputGroup%3bBuiltProjectOutputGroupDependencies%3bGetCopyToOutputDirectoryItems%3bPkgdefProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
+      <IncludeOutputGroupsInVSIXLocalOnly>DebugSymbolsProjectOutputGroup%3b</IncludeOutputGroupsInVSIXLocalOnly>
+    </ProjectReference>
+    <ProjectReference Include="..\Usus.net.TypeCylces\Usus.net.TypeCylces.csproj">
+      <Project>{03a01044-431e-4029-94ae-874b89012e8e}</Project>
+      <Name>Usus.net.TypeCylces</Name>
       <IncludeOutputGroupsInVSIX>BuiltProjectOutputGroup%3bBuiltProjectOutputGroupDependencies%3bGetCopyToOutputDirectoryItems%3bPkgdefProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
       <IncludeOutputGroupsInVSIXLocalOnly>DebugSymbolsProjectOutputGroup%3b</IncludeOutputGroupsInVSIXLocalOnly>
     </ProjectReference>

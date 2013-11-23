@@ -87,7 +87,6 @@
     <Compile Include="AssemblyNavigation\TypeVisitor.cs" />
     <Compile Include="Graphs\BidirectionalGraphCloneExtensions.cs" />
     <Compile Include="Graphs\BidirectionalGraphExtensions.cs" />
-    <Compile Include="Graphs\GraphSurrogate.cs" />
     <Compile Include="Graphs\IGraph.cs" />
     <Compile Include="Graphs\StronglyConntectedComponent.cs" />
     <Compile Include="Graphs\StronglyConntectedComponents.cs" />
@@ -160,6 +159,7 @@
     <Compile Include="Helper\StringExtensions.cs" />
     <Compile Include="Reports\TypeMetricsReport.cs" />
     <Compile Include="Reports\TypeMetricsWithMethodMetrics.cs" />
+    <Compile Include="Reports\TypeReference.cs" />
     <Compile Include="SQI\CachedParameters.cs" />
     <Compile Include="SQI\IParameterProvider.cs" />
     <Compile Include="SQI\Calculate.cs" />
