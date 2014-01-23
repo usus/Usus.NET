@@ -1,9 +1,0 @@
-﻿<Window x:Class="andrena.Usus.net.View.Dialogs.List.ListDisplay"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="{Binding Header}" Height="300" Width="300" WindowStyle="ToolWindow">
-    <Grid>
-        <ListBox ItemsSource="{Binding Entries}" BorderThickness="0" MouseDoubleClick="ListBox_MouseDoubleClick">
-        </ListBox>
-    </Grid>
-</Window>

@@ -27,5 +27,5 @@ var bigClasses = hotspots.OfClassSizeOver(10);
 ```
 
 
-Usus.NET works with Visual Studio 2010 and Visual Studio 2012. The source code and binaries are different and separate for those versions.
+Usus.NET works with Visual Studio 2010. The source code and binaries are different and separate for those versions.
 The Visual Studio SDK is needed to compile both versions of Usus.NET.
