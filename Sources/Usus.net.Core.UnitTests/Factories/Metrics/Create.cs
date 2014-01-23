@@ -26,7 +26,7 @@ namespace Usus.net.Core.UnitTests.Factories.Metrics
         {
             var metricsReport = new MetricsReport();
             foreach (var typeMetric in typeMetrics)
-                metricsReport.AddTypeReport(TypeMetrics(typeMetric.Itself, typeMetric.Methods));
+                metricsReport.AddTypeReport(TypeMetrics(typeMetric.Type, typeMetric.Methods));
             return metricsReport;
         }
 
@@ -46,14 +46,14 @@ namespace Usus.net.Core.UnitTests.Factories.Metrics
 
         private static TypeMetricsWithMethodMetrics TypeMetrics(TypeMetricsReport typeMetrics, IEnumerable<MethodMetricsReport> methodMetrics)
         {
-            var typeWithMethods = new TypeMetricsWithMethodMetrics() { Itself = typeMetrics };
+            var typeWithMethods = new TypeMetricsWithMethodMetrics() { Type = typeMetrics };
             typeWithMethods.AddMethodReports(methodMetrics);
             return typeWithMethods;
         }
 
         private static NamespaceMetricsWithTypeMetrics NamespaceMetrics(NamespaceMetricsReport namespaceMetrics, IEnumerable<TypeMetricsReport> typeMetrics)
         {
-            var namespaceWithTypes = new NamespaceMetricsWithTypeMetrics() { Itself = namespaceMetrics };
+            var namespaceWithTypes = new NamespaceMetricsWithTypeMetrics() { Namespace = namespaceMetrics };
             foreach (var typeMetric in typeMetrics) namespaceWithTypes.AddTypeReport(typeMetric);
             return namespaceWithTypes;
         }
