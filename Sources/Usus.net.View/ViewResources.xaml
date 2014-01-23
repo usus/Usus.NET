@@ -3,6 +3,8 @@
                     xmlns:vm="clr-namespace:andrena.Usus.net.View.ViewModels"
                     xmlns:dvc="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit"
                     xmlns:chartingprimitives="clr-namespace:System.Windows.Controls.DataVisualization.Charting.Primitives;assembly=System.Windows.Controls.DataVisualization.Toolkit"
+					xmlns:gs="clr-namespace:GraphSharp.Controls;assembly=GraphSharp.Controls"
+			 
                     >
 
     <vm:TrueToVisibleConverter x:Key="TrueToVisibile"/>
@@ -67,7 +69,35 @@
         <Setter Property="HorizontalAlignment" Value="Right"/>
     </Style>
 
-    
+	<Style TargetType="{x:Type gs:VertexControl}">
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type gs:VertexControl}">
+					<Border BorderBrush="Gray"
+                                     Background="LightGray"
+                                     BorderThickness="1.0"
+                                     CornerRadius="8,8,8,8"
+                                     Padding="5">
+						<StackPanel Orientation="Vertical">
+							<!--    Vertex handlers -->
+							<ContentPresenter Content="{TemplateBinding Vertex}" 
+												  />
+							<!--ContentTemplate="{StaticResource demoTemplate}"
+                                             MouseUp="Vertex_MouseUp"
+                                             MouseEnter="Vertex_MouseEnter" 
+                                             MouseDown="Vertex_MouseDown" 
+                                             MouseLeftButtonDown="Vertex_MouseLeftButtonDown"-->
+						</StackPanel>
+
+						<!--<Border.Effect>
+								<DropShadowEffect BlurRadius="0.2" Color="LightCoral" 
+                                     Opacity="0.5"/>
+							</Border.Effect>-->
+					</Border>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
 
 
 </ResourceDictionary>

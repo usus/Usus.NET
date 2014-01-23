@@ -19,6 +19,7 @@ namespace andrena.Usus.net.Shell
             Hotspots.DataContext = CreateHotspotsViewModel();
             Distributions.DataContext = CreateDistribtionsViewModel();
             SQI.DataContext = CreateSQIViewModel();
+			TypeCycles.DataContext = CreateTypeCyclesViewModel();
         }
 
         private View.ViewModels.Cockpit.Cockpit CreateCockpitViewModel()
@@ -42,13 +43,20 @@ namespace andrena.Usus.net.Shell
             return distributions;
         }
 
-        private View.ViewModels.SQI.SQI CreateSQIViewModel()
-        {
-            var sqi = new View.ViewModels.SQI.SQI { Dispatchable = SQI };
-            sqi.Details = new SqiDeatils();
-            sqi.RegisterHub(ViewModel.Hub);
-            return sqi;
-        }
+		private View.ViewModels.SQI.SQI CreateSQIViewModel()
+		{
+			var sqi = new View.ViewModels.SQI.SQI { Dispatchable = SQI };
+			sqi.Details = new SqiDeatils();
+			sqi.RegisterHub(ViewModel.Hub);
+			return sqi;
+		}
+
+		private View.ViewModels.TypeCycles.TypeCycles CreateTypeCyclesViewModel()
+		{
+			var typeCycles = new View.ViewModels.TypeCycles.TypeCycles { Dispatchable = TypeCycles };
+			typeCycles.RegisterHub(ViewModel.Hub);
+			return typeCycles;
+		}
 
         private void StartAnalysis(object sender, RoutedEventArgs e)
         {
