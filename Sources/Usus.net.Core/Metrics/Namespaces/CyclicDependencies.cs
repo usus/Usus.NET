@@ -21,7 +21,7 @@ namespace andrena.Usus.net.Core.Metrics.Namespaces
         private static IEnumerable<NamespaceMetricsReport> GetOtherNamespacesInSameCycleIn(this NamespaceMetricsWithTypeMetrics namespaceWithTypes, StronglyConntectedComponents<NamespaceMetricsWithTypeMetrics> cycles)
         {
             return from n in cycles.OfVertex(namespaceWithTypes).Vertices
-                   select n.Itself;
+                   select n.Namespace;
         }
     }
 }

@@ -1,6 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2010
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30110.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0ABCF40C-F425-45A2-A387-5513B7808FC0}"
+	ProjectSection(SolutionItems) = preProject
+		Local.testsettings = Local.testsettings
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+		Usus.net.vsmdi = Usus.net.vsmdi
+	EndProjectSection
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Usus.net.View", "Usus.net.View\Usus.net.View.csproj", "{08D9B61E-6197-4775-B90E-9F685C731BFB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Usus.net.Core", "Usus.net.Core\Usus.net.Core.csproj", "{F8527516-94DE-42E3-B885-C7664EE4F655}"
@@ -8,13 +17,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Usus.net.Console", "Usus.net.Console\Usus.net.Console.csproj", "{052B23C7-B2AE-4A75-A272-43E81E9C08AE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Usus.net.Core.IntegrationTests", "Usus.net.Core.IntegrationTests\Usus.net.Core.IntegrationTests.csproj", "{A4719E35-7E5F-47F7-8022-FFA97B0FBD67}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0ABCF40C-F425-45A2-A387-5513B7808FC0}"
-	ProjectSection(SolutionItems) = preProject
-		Local.testsettings = Local.testsettings
-		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
-		Usus.net.vsmdi = Usus.net.vsmdi
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Usus.net.Core.UnitTests", "Usus.net.Core.UnitTests\Usus.net.Core.UnitTests.csproj", "{E7F79C9A-C6C1-4A1A-8C5B-C337909FD018}"
 EndProject
@@ -40,10 +42,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Usus.net.Sqi", "Usus.net.Sq
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Usus.net.View.UnitTests", "Usus.net.View.UnitTests\Usus.net.View.UnitTests.csproj", "{E55D3BE8-9EF3-4094-B4D7-507213A9F7F4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Usus.net.Graphs", "Usus.net.Graphs\Usus.net.Graphs.csproj", "{8A4524CE-85BD-477F-9D14-0602C4B64D7D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Usus.net.TypeCylces", "Usus.net.TypeCylces\Usus.net.TypeCylces.csproj", "{03A01044-431E-4029-94AE-874B89012E8E}"
+EndProject
 Global
-	GlobalSection(TestCaseManagementSettings) = postSolution
-		CategoryFile = Usus.net.vsmdi
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|Mixed Platforms = Debug|Mixed Platforms
@@ -213,8 +216,31 @@ Global
 		{E55D3BE8-9EF3-4094-B4D7-507213A9F7F4}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{E55D3BE8-9EF3-4094-B4D7-507213A9F7F4}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{E55D3BE8-9EF3-4094-B4D7-507213A9F7F4}.Release|x86.ActiveCfg = Release|Any CPU
+		{8A4524CE-85BD-477F-9D14-0602C4B64D7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A4524CE-85BD-477F-9D14-0602C4B64D7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A4524CE-85BD-477F-9D14-0602C4B64D7D}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{8A4524CE-85BD-477F-9D14-0602C4B64D7D}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{8A4524CE-85BD-477F-9D14-0602C4B64D7D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{8A4524CE-85BD-477F-9D14-0602C4B64D7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A4524CE-85BD-477F-9D14-0602C4B64D7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A4524CE-85BD-477F-9D14-0602C4B64D7D}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{8A4524CE-85BD-477F-9D14-0602C4B64D7D}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{8A4524CE-85BD-477F-9D14-0602C4B64D7D}.Release|x86.ActiveCfg = Release|Any CPU
+		{03A01044-431E-4029-94AE-874B89012E8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03A01044-431E-4029-94AE-874B89012E8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03A01044-431E-4029-94AE-874B89012E8E}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{03A01044-431E-4029-94AE-874B89012E8E}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{03A01044-431E-4029-94AE-874B89012E8E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{03A01044-431E-4029-94AE-874B89012E8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03A01044-431E-4029-94AE-874B89012E8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03A01044-431E-4029-94AE-874B89012E8E}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{03A01044-431E-4029-94AE-874B89012E8E}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{03A01044-431E-4029-94AE-874B89012E8E}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = Usus.net.vsmdi
 	EndGlobalSection
 EndGlobal
