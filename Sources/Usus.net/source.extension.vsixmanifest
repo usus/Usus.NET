@@ -9,7 +9,7 @@
     <License>license.txt</License>
     <PreviewImage>preview.jpg</PreviewImage>
     <SupportedProducts>
-      <VisualStudio Version="11.0">
+      <VisualStudio Version="12.0">
         <Edition>Pro</Edition>
       </VisualStudio>
     </SupportedProducts>
