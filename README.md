@@ -1,4 +1,4 @@
-Usus.NET [![Build status](https://ci.appveyor.com/api/projects/status?id=1afipffmrc1d1s27)](https://ci.appveyor.com/project/usus-usus-net)
+Usus.NET [![Build status](https://ci.appveyor.com/api/projects/status/1afipffmrc1d1s27?svg=true)](https://ci.appveyor.com/project/halllo/usus-usus-net)
 ========
 
 This Visual Studio extension provides static code analysis for software developed with .NET.
